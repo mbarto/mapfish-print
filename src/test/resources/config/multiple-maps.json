@@ -1,0 +1,13 @@
+{
+	"maps": {
+		"main": {
+			"layers": []
+		},
+		"other": {
+			"layers": []
+		}
+	},
+	
+	"center": [45.2, 13.1],
+	"scale": 20000
+}

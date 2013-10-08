@@ -68,7 +68,13 @@ public class MapChunkDrawer extends ChunkDrawer {
     }
 
     public void renderImpl(Rectangle rectangle, PdfContentByte dc) {
-        final PJsonObject parent = context.getGlobalParams();
+        PJsonObject parent = context.getGlobalParams();
+        if(parent.has("maps")) {
+        	PJsonObject maps = parent.getJSONObject("maps");
+        	if(maps.has(name)) {
+        		parent = maps.getJSONObject(name);
+        	}
+        }
         PJsonArray layers = parent.getJSONArray("layers");
         String srs = parent.getString("srs");
 
