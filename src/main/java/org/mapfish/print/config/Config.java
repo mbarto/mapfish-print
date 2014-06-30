@@ -115,6 +115,8 @@ public class Config implements Closeable {
     private String brokenUrlPlaceholder = Constants.ImagePlaceHolderConstants.THROW;
     private String proxyBaseUrl;
     private MetricRegistry metricRegistry;
+    
+    private boolean inlineDownload = false;
 
     public Config() {
         hosts.add(new LocalHostMatcher());
@@ -610,4 +612,14 @@ public class Config implements Closeable {
     public MetricRegistry getMetricRegistry() {
         return metricRegistry;
     }
+
+	public boolean isInlineDownload() {
+		return inlineDownload;
+	}
+
+	public void setInlineDownload(boolean inlineDownload) {
+		this.inlineDownload = inlineDownload;
+	}
+    
+    
 }

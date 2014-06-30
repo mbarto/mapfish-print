@@ -389,6 +389,7 @@ public class MapPrinterServlet extends BaseMapServlet {
         FileInputStream pdf = new FileInputStream(tempFile);
         final OutputStream response = httpServletResponse.getOutputStream();
         MapPrinter mapPrinter = getMapPrinter(app);
+        inline = inline || mapPrinter.getConfig().isInlineDownload();
         try {
             httpServletResponse.setContentType(tempFile.contentType());
             if (!inline) {

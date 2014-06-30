@@ -65,6 +65,7 @@ Here is the general structure:
   ?proxyBaseUrl: http://mapfishprint.org  MF_V2.0
   ?tmsDefaultOriginX: 0.0f   MF_V2.0
   ?tmsDefaultOriginY: 0.0f   MF_V2.0
+  ?inlineDownload: false
 
   ?security:
   ?  - !basicAuth
@@ -147,6 +148,7 @@ Non-null values are:
 
 "tmsDefaultOriginY" By default this is null.  If non-null then TmsMapReader will use this as the origin y value if null then the origin will be derived from the maxExtent parameter.
 
+"inlineDownload" By default is false. If true files are shown directly by the browser, instead of being downloaded.
 
 Security
 --------
